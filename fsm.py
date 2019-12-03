@@ -53,11 +53,11 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state12(self, event):
         text = event.message.text
-        return text.lower() == "現行犯""
+        return text.lower() == "現行犯
 
     def is_going_to_state13(self, event):
         text = event.message.text
-        return text.lower() == "開壇作法""
+        return text.lower() == "開壇作法
 
 ##########################################################
 
