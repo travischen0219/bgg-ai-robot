@@ -110,8 +110,12 @@ def webhook_handler():
         if response == False:
             #send_text_message(event.reply_token, "Not Entering any State")
             image_url = "https://i.imgur.com/eTldj2E.png?1"
-            line_bot_api.push_message(event.reply_token,ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
-    return "OK"
+            try:
+                line_bot_api.push_message(event.reply_token, ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
+            except LineBotApiError as e:
+                # error handle
+                raise e
+                return "OK"
 
 
 @app.route("/show-fsm", methods=["GET"])
