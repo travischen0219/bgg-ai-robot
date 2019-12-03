@@ -1,3 +1,6 @@
 graphviz
 libgraphviz-dev
 pkg-config
+urllib3
+urllib.request
+bs4

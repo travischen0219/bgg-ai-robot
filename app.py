@@ -1,8 +1,7 @@
 import os
 import sys
 
-import requests 
-import bs4
+import requests
 from bs4 import BeautifulSoup
 from urllib.request import urlretrieve
 #這邊是關於爬蟲的include
