@@ -32,16 +32,6 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         send_text_message(reply_token, "嬤嬤我想吃烤山藥")
-        line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
-        title = "國立臺灣科技大學"
-        address = "106台北市大安區基隆路四段43號"
-        latitude = 25.0136906
-        longitude = 121.5406792
-        try:
-            line_bot_api.push_message(to, LocationSendMessage(title=title,address=address,latitude=latitude,longitude=longitude))
-        except LineBotApiError as e:
-            # error handle
-            raise e
         self.go_back()
 
 
