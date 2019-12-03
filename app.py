@@ -10,6 +10,10 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from fsm import TocMachine
 from utils import send_text_message
 
+from linebot import LineBotApi
+from linebot.models import TextSendMessage, ImageSendMessage
+from linebot.exceptions import LineBotApiError
+
 load_dotenv()
 
 
@@ -104,33 +108,9 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            send_text_message(event.reply_token, "Not Entering any State")
-            event.message.text == "Buttons Template":
-            buttons_template = TemplateSendMessage(
-            alt_text='Buttons Template',
-            template=ButtonsTemplate(
-                title='這是ButtonsTemplate',
-                text='ButtonsTemplate可以傳送text,uri',
-                thumbnail_image_url='顯示在開頭的大圖片網址',
-                actions=[
-                    MessageTemplateAction(
-                        label='ButtonsTemplate',
-                        text='ButtonsTemplate'
-                    ),
-                    URITemplateAction(
-                        label='VIDEO1',
-                        uri='影片網址'
-                    ),
-                    PostbackTemplateAction(
-                        label='postback',
-                        text='postback text',
-                        data='postback1'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-
+            #send_text_message(event.reply_token, "Not Entering any State")
+            image_url = "https://i.imgur.com/eTldj2E.png?1"
+            line_bot_api.push_message(event.reply_token,ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
     return "OK"
 
 
