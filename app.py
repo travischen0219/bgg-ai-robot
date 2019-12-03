@@ -110,8 +110,9 @@ def webhook_handler():
         if response == False:
             #send_text_message(event.reply_token, "Not Entering any State") 
             try:
-                image_url = "https://i.imgur.com/eTldj2E.png?1"
+                image_url = "https://imgur.com/a/l1fiHzr"
                 line_bot_api.reply_message(event.reply_token, ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
+                line_bot_api.reply_message(event.reply_token, "雖然不知道你在說甚麼，但還是給你看看我的帥臉")
             except LineBotApiError as e:
                 # error handle
                 raise e
