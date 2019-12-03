@@ -21,15 +21,15 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state4(self, event):
         text = event.message.text
-        return text.lower() == "否"||text.lower() == "認錯"
+        return text.lower() == "否" or text.lower() == "認錯"
 
     def is_going_to_state5(self, event):
         text = event.message.text
-        return text.lower() == "相信"||text.lower() == "明日再來"
+        return text.lower() == "相信" or text.lower() == "明日再來"
 
     def is_going_to_state6(self, event):
         text = event.message.text
-        return text.lower() == "放棄"||text.lower() == "不承認"
+        return text.lower() == "放棄" or text.lower() == "不承認"
 
     def is_going_to_state7(self, event):
         text = event.message.text
@@ -45,7 +45,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state10(self, event):
         text = event.message.text
-        return text.lower() == "奉上紅包"||text.lower() == "加入戰局"||text.lower() == "下跪認錯"||text.lower() == "被無罪釋放"
+        return text.lower() == "奉上紅包" or text.lower() == "加入戰局" or text.lower() == "下跪認錯" or text.lower() == "被無罪釋放"
 
     def is_going_to_state11(self, event):
         text = event.message.text
