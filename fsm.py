@@ -2,8 +2,6 @@ from transitions.extensions import GraphMachine
 
 from utils import send_text_message
 
-from linebot.models import TemplateSendMessage, ButtonsTemplate, PostbackTemplateAction, MessageTemplateAction, URITemplateAction
-
 
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
@@ -21,7 +19,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "謝謝媽媽 媽媽真好")
+        send_text_message(reply_token, "Trigger state1")
         self.go_back()
 
     def on_exit_state1(self):
@@ -31,9 +29,8 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "嬤嬤我想吃烤山藥")
+        send_text_message(reply_token, "Trigger state2")
         self.go_back()
-
 
     def on_exit_state2(self):
         print("Leaving state2")

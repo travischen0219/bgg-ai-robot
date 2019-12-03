@@ -1,11 +1,6 @@
 import os
 import sys
 
-import requests
-from bs4 import BeautifulSoup
-from urllib.request import urlretrieve
-#這邊是關於爬蟲的include
-
 from flask import Flask, jsonify, request, abort, send_file
 from dotenv import load_dotenv
 from linebot import LineBotApi, WebhookParser
@@ -14,10 +9,6 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 from fsm import TocMachine
 from utils import send_text_message
-
-from linebot import LineBotApi
-from linebot.models import TextSendMessage, ImageSendMessage
-from linebot.exceptions import LineBotApiError
 
 load_dotenv()
 
@@ -113,34 +104,9 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            #send_text_message(event.reply_token, "Not Entering any State") 
-            try:
-                image_url = "https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p240x240/70873816_1197712057065660_6917288780055445504_o.jpg?_nc_cat=108&_nc_ohc=xKU-WPrQhbcAQmoNFrOkdfINsjTsfFLyN23cVCGqXq2X_FyjTQLZveQtQ&_nc_ht=scontent-tpe1-1.xx&oh=a3d5adf078868e5f7b7ecb810f7d8669&oe=5E804958"
-                #text = "雖然不知道你在說甚麼，但還是給你看看我的帥臉"
-                send_text_message(event.reply_token, "雖然不知道你在說甚麼，但還是給你看看我的帥臉")
-                #a=movie()
-                #send_text_message(event.reply_token, TextSendMessage(text=a))
-                #line_bot_api.push_message(event.reply_token, ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
-            
-            except LineBotApiError as e:
-                # error handle
-                raise e
-    return "OK"
+            send_text_message(event.reply_token, "Not Entering any State")
 
-def movie():
-    target_url = 'https://movies.yahoo.com.tw/'
-    rs = requests.session()
-    res = rs.get(target_url, verify=False)
-    res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'html.parser')   
-    content = ""
-    for index, data in enumerate(soup.select('div.movielist_info h1 a')):
-        if index == 20:
-            return content       
-        title = data.text
-        link =  data['href']
-        content += '{}\n{}\n'.format(title, link)
-    return content
+    return "OK"
 
 
 @app.route("/show-fsm", methods=["GET"])
@@ -152,5 +118,3 @@ def show_fsm():
 if __name__ == "__main__":
     port = os.environ.get("PORT", 8000)
     app.run(host="0.0.0.0", port=port, debug=True)
-
-
