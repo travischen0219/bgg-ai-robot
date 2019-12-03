@@ -118,9 +118,9 @@ def webhook_handler():
                 image_url = "https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p240x240/70873816_1197712057065660_6917288780055445504_o.jpg?_nc_cat=108&_nc_ohc=xKU-WPrQhbcAQmoNFrOkdfINsjTsfFLyN23cVCGqXq2X_FyjTQLZveQtQ&_nc_ht=scontent-tpe1-1.xx&oh=a3d5adf078868e5f7b7ecb810f7d8669&oe=5E804958"
                 #text = "雖然不知道你在說甚麼，但還是給你看看我的帥臉"
                 send_text_message(event.reply_token, "雖然不知道你在說甚麼，但還是給你看看我的帥臉")
-                a=movie()
-                send_text_message(event.reply_token, TextSendMessage(text=a))
-                line_bot_api.push_message(event.reply_token, ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
+                #a=movie()
+                #send_text_message(event.reply_token, TextSendMessage(text=a))
+                #line_bot_api.push_message(event.reply_token, ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
             
             except LineBotApiError as e:
                 # error handle
