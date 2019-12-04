@@ -7,7 +7,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateS
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
 
-def send_text_message(reply_token, text):
+def send_text_message(reply_token, text, imgurl):
     line_bot_api = LineBotApi(channel_access_token)
     #line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
     
@@ -16,7 +16,7 @@ def send_text_message(reply_token, text):
         template=ButtonsTemplate(
             title='這是ButtonsTemplate',
             text=text,
-            thumbnail_image_url='https://s.yimg.com/ny/api/res/1.2/P2dJHQkh9UN9iEgXAD70jg--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9MTIwMDtoPTY3NQ--/http://media.zenfs.com/zh-Hant-TW/homerun/ebc.net.tw/712e2c53980aab6b57b1ca214dbf139d',
+            thumbnail_image_url=imgurl,
             actions=[
                 MessageTemplateAction(
                     label='ButtonsTemplate',
