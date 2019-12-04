@@ -16,21 +16,16 @@ def send_text_message(reply_token, text):
         template=ButtonsTemplate(
             title='這是ButtonsTemplate',
             text=text,
-            thumbnail_image_url='顯示在開頭的大圖片網址',
+            thumbnail_image_url='https://s.yimg.com/ny/api/res/1.2/P2dJHQkh9UN9iEgXAD70jg--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9MTIwMDtoPTY3NQ--/http://media.zenfs.com/zh-Hant-TW/homerun/ebc.net.tw/712e2c53980aab6b57b1ca214dbf139d',
             actions=[
                 MessageTemplateAction(
                     label='ButtonsTemplate',
                     text='ButtonsTemplate'
                 ),
                 URITemplateAction(
-                    label='VIDEO1',
-                    uri='影片網址'
+                    label='玫瑰瞳鈴眼第51集',
+                    uri='https://www.youtube.com/watch?v=alD7ixZQKso'
                 ),
-                PostbackTemplateAction(
-                    label='postback',
-                    text='postback text',
-                    data='postback1'
-                )
             ]
         )
     )
