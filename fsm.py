@@ -79,7 +79,7 @@ class TocMachine(GraphMachine):
     def on_enter_state4(self, event):
         print("I'm entering state4")
         reply_token = event.reply_token
-        send_text_message(reply_token, "凡夫俗子，注定六道輪迴！")
+        send_text_message(reply_token, "凡夫俗子，注定六道輪迴！","你已經中了張麗美的詭計，落入六道輪迴、永不超生！","https://i.imgur.com/k0bFN4n.jpg")
         
     def on_enter_state5(self, event):
         print("I'm entering state5")
