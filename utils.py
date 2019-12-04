@@ -34,7 +34,7 @@ def send_text_message(reply_token, text):
             ]
         )
     )
-    line_bot_api.reply_message(event.reply_token, buttons_template)
+    line_bot_api.reply_message(reply_token, buttons_template)
 
     return "OK"
 
