@@ -14,9 +14,9 @@ def send_text_message(reply_token, text, imgurl):
     buttons_template = TemplateSendMessage(
         alt_text='Buttons Template',
         template=ButtonsTemplate(
-            title='這是ButtonsTemplate',
-            text=text,
-            thumbnail_image_url=imgurl,
+            title = text,
+            text = text,
+            thumbnail_image_url = imgurl,
             actions=[
                 MessageTemplateAction(
                     label='ButtonsTemplate',
