@@ -64,17 +64,17 @@ class TocMachine(GraphMachine):
     def on_enter_state1(self, event):
         print("I'm entering state1")
         reply_token = event.reply_token
-        send_text_message(reply_token, "玫瑰瞳鈴眼第51集「鞭屍女活佛」","民國八十年八十二日，宜蘭地區發生了一起令人嘖嘖稱奇的神祕案件。這一切似乎都跟慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png')
+        send_text_message(reply_token, "玫瑰瞳鈴眼第51集「鞭屍女活佛」","民國八十年八月十二日，宜蘭地區發生了一起令人嘖嘖稱奇的神祕案件。而這一切似乎都跟羅東慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png')
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
         reply_token = event.reply_token
-        send_text_message(reply_token, "妳是女主角麗芬，是否趁亂逃跑?",'https://i.imgur.com/NlA0o22.jpg')
+        send_text_message(reply_token, "妳是女主角麗芬，是否趁亂逃跑?","妳是女主角麗芬，因為一些陰錯陽差的緣故被慈善會的幫眾綁架，妳趁著歹徒們不注意的時候趁亂……",'https://i.imgur.com/NlA0o22.jpg')
 
     def on_enter_state3(self, event):
         print("I'm entering state3")
         reply_token = event.reply_token
-        send_text_message(reply_token, "麗芬衝進警察局主張有人要追殺她，李組長是否要相信她?")
+        send_text_message(reply_token, "麗芬衝進警察局主張有人要追殺她，身為刑事組長的你是否要相信她?")
 
     def on_enter_state4(self, event):
         print("I'm entering state4")
