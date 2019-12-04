@@ -64,12 +64,12 @@ class TocMachine(GraphMachine):
     def on_enter_state1(self, event):
         print("I'm entering state1")
         reply_token = event.reply_token
-        send_text_message(reply_token, "玫瑰瞳鈴眼第51集「鞭屍女活佛」",https://i.imgur.com/ppE2R8X.png)
+        send_text_message(reply_token, "玫瑰瞳鈴眼第51集「鞭屍女活佛」",'https://i.imgur.com/ppE2R8X.png')
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
         reply_token = event.reply_token
-        send_text_message(reply_token, "妳是女主角麗芬，是否趁亂逃跑?",https://i.imgur.com/NlA0o22.jpg)
+        send_text_message(reply_token, "妳是女主角麗芬，是否趁亂逃跑?",'https://i.imgur.com/NlA0o22.jpg')
 
     def on_enter_state3(self, event):
         print("I'm entering state3")
