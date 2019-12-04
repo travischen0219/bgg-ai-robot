@@ -7,14 +7,14 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateS
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
 
-def send_text_message(reply_token, text, imgurl):
+def send_text_message(reply_token, title, text, imgurl):
     line_bot_api = LineBotApi(channel_access_token)
     #line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
     
     buttons_template = TemplateSendMessage(
         alt_text='Buttons Template',
         template=ButtonsTemplate(
-            title = text,
+            title = title,
             text = text,
             thumbnail_image_url = imgurl,
             actions=[
