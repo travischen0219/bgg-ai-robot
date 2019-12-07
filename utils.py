@@ -19,16 +19,14 @@ def send_text_message(reply_token, title, text, imgurl, option1, option2):
             thumbnail_image_url = imgurl,
 
             actions=[
-                if option1
-                    MessageTemplateAction(
-                        label=option1,
-                        text=option1
-                    ),
-                if option2
-                    MessageTemplateAction(
-                        label=option2,
-                        text=option2
-                    ),
+                MessageTemplateAction(
+                    label=option1,
+                    text=option1
+                ),
+                MessageTemplateAction(
+                    label=option2,
+                    text=option2
+                ),
                 URITemplateAction(
                     label='立即觀看「玫瑰瞳鈴眼第51集」',
                     uri='https://www.youtube.com/watch?v=alD7ixZQKso'
