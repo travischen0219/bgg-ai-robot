@@ -297,7 +297,7 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            line_bot_api.reply_message(event.reply_token, "Not Entering any State")
+            line_bot_api.reply_message(event.reply_token, "請輸入「重新來過」以進入劇情模式！")
 
     return "OK"
 

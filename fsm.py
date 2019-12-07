@@ -21,7 +21,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state4(self, event):
         text = event.message.text
-        return text.lower() == "否" or text.lower() == "認錯" or text.lower() == "我不敢開始" or text.lower() == "我還是留在原地好了" or text.lower() == "不相信" or text.lower() == "給麗美一巴掌下去"
+        return text.lower() == "否" or text.lower() == "認新的喝下符水" or text.lower() == "我不敢開始" or text.lower() == "把符水潑在麗美頭上" or text.lower() == "我還是留在原地好了" or text.lower() == "不相信" or text.lower() == "給麗美一巴掌下去"
 
     def is_going_to_state5(self, event):
         text = event.message.text
