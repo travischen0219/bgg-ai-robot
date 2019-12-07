@@ -75,7 +75,7 @@ class TocMachine(GraphMachine):
     def on_enter_state3(self, event):
         print("I'm entering state3")
         reply_token = event.reply_token
-        send_text_message(reply_token, "麗芬衝進警察局主張有人要追殺她，身為刑事組長的你是否要相信她？","麗芬向刑事組長哭訴有人要殺害她。而正當組長詢問兇手究竟是誰時，麗芬卻說出是妹妹和手下聯合起來……",'https://i.imgur.com/A1MaIbC.jpg',"相信","不相信")
+        send_text_message(reply_token, "麗芬衝進警察局主張有人要追殺她，身為刑事組長你是否要相信她？","麗芬向刑事組長哭訴有人要殺害她。而正當組長詢問兇手究竟是誰時，麗芬卻說出是妹妹和手下聯合起來……",'https://i.imgur.com/A1MaIbC.jpg',"相信","不相信")
 
     def on_enter_state4(self, event):
         print("I'm entering state4")
