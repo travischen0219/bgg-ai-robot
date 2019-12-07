@@ -9,7 +9,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state1(self, event):
         text = event.message.text
-        return text.lower() == "重新來過" or text.lower() == "我要成為下個女活佛"
+        return text.lower() == "重新來過" or text.lower() == "我要成為下個女活佛" or text.lower() =="開始"
 
     def is_going_to_state2(self, event):
         text = event.message.text
