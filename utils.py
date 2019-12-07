@@ -7,12 +7,12 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, Tem plate
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
 
-def send_text_message(reply_token, title, text, imgurl, option1, option2):
+def send_text_message(reply_token, title, text, imgurl,option1):
     #line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
     line_bot_api = LineBotApi(channel_access_token)
     
     buttons_template = TemplateSendMessage(
-        alt_text="請到聊天視窗中確認訊息！",
+        alt_text='請到聊天視窗中確認訊息',
         template=ButtonsTemplate(
             title = title,
             text = text,
@@ -20,12 +20,12 @@ def send_text_message(reply_token, title, text, imgurl, option1, option2):
 
             actions=[
                 MessageTemplateAction(
-                    label=option1,
-                    text=option1
+                    label='是',
+                    text='是'
                 ),
                 MessageTemplateAction(
-                    label=option2,
-                    text=option2
+                    label='否',
+                    text='否'
                 ),
                 URITemplateAction(
                     label='立即觀看「玫瑰瞳鈴眼第51集」',
