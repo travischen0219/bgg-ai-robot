@@ -64,7 +64,7 @@ class TocMachine(GraphMachine):
     def on_enter_state1(self, event):
         print("I'm entering state1")
         reply_token = event.reply_token
-        send_text_message(reply_token, "玫瑰瞳鈴眼第51集「鞭屍女活佛」","民國八十年八月十二日宜蘭地區發生了一起拍案叫絕的神祕案件。而這一切似乎都與慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png')
+        send_text_message(reply_token, "是否開始體驗玫瑰瞳鈴眼第51集「鞭屍女活佛」?","民國八十年八月十二日宜蘭發生了一起驚悚的神祕案件。而這一切又似乎與慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png')
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
@@ -79,22 +79,22 @@ class TocMachine(GraphMachine):
     def on_enter_state4(self, event):
         print("I'm entering state4")
         reply_token = event.reply_token
-        send_text_message(reply_token, "凡夫俗子，注定六道輪迴！","你已經中了張麗美的詭計，落入六道輪迴、永不超生！","https://i.imgur.com/k0bFN4n.jpg")
+        send_text_message(reply_token, "凡夫俗子，注定六道輪迴！，施主是否從新開始?","你已經中了張麗美的詭計，落入六道輪迴、永不超生！","https://i.imgur.com/k0bFN4n.jpg")
         
     def on_enter_state5(self, event):
         print("I'm entering state5")
         reply_token = event.reply_token
-        send_text_message(reply_token, "刑警是否加入慈善會調查秘密?")
+        send_text_message(reply_token, "身為刑警的你是否要加入慈善會秘密調查?","為了解開這件詭譎的謎團，賴警官眉頭一皺，似乎決心隻身前往慈善會總壇探探口風……","https://i.imgur.com/l6arcRX.jpg")
 
     def on_enter_state6(self, event):
         print("I'm entering state6")
         reply_token = event.reply_token
-        send_text_message(reply_token, "果然是妖魔鬼怪附身！")
+        send_text_message(reply_token, "果然是妖魔鬼怪附身，趕緊向佛祖認錯！","你已經被大量的妖魔鬼怪附身！趕緊喝下這杯特調符水並向佛祖誠心懺悔……","https://i.imgur.com/h9m1gcw.jpg")
         
     def on_enter_state7(self, event):
         print("I'm entering state7")
         reply_token = event.reply_token
-        send_text_message(reply_token, "慈善會今天不開門！")
+        send_text_message(reply_token, "慈善會今天不開門，是否改日再來呢?","當賴警官抵達慈善會總壇之後，應門的信徒竟然表示今天不招收新的會員……","https://i.imgur.com/rbkVgrM.jpg")
         
     def on_enter_state8(self, event):
         print("I'm entering state8")
