@@ -64,27 +64,27 @@ class TocMachine(GraphMachine):
     def on_enter_state1(self, event):
         print("I'm entering state1")
         reply_token = event.reply_token
-        send_text_message(reply_token, "是否開始體驗玫瑰瞳鈴眼第51集「鞭屍女活佛」?","民國八十年八月十二日宜蘭發生了一起驚悚的神祕案件。而這一切又似乎與慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png')
+        send_text_message(reply_token, "是否開始體驗玫瑰瞳鈴眼第51集「鞭屍女活佛」？","民國八十年八月十二日宜蘭發生了一起驚悚的神祕案件。而這一切又似乎與慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png')
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
         reply_token = event.reply_token
-        send_text_message(reply_token, "妳是女主角麗芬，是否趁亂逃跑?","妳是女主角麗芬，因為一些陰錯陽差的緣故被慈善會的幫眾綁架，妳趁著歹徒們不注意的時候趁亂……",'https://i.imgur.com/NlA0o22.jpg')
+        send_text_message(reply_token, "妳是女主角麗芬，是否趁亂逃跑？","妳是女主角麗芬，因為一些陰錯陽差的緣故被慈善會的幫眾綁架，妳趁著歹徒們不注意的時候趁亂……",'https://i.imgur.com/NlA0o22.jpg')
 
     def on_enter_state3(self, event):
         print("I'm entering state3")
         reply_token = event.reply_token
-        send_text_message(reply_token, "麗芬衝進警察局主張有人要追殺她，身為刑事組長的你是否要相信她?","麗芬向刑事組長哭訴有人要殺害她。而正當組長詢問兇手究竟是誰時，麗芬卻說出是妹妹和手下聯合起來……",'https://i.imgur.com/A1MaIbC.jpg')
+        send_text_message(reply_token, "麗芬衝進警察局主張有人要追殺她，身為刑事組長的你是否要相信她？","麗芬向刑事組長哭訴有人要殺害她。而正當組長詢問兇手究竟是誰時，麗芬卻說出是妹妹和手下聯合起來……",'https://i.imgur.com/A1MaIbC.jpg')
 
     def on_enter_state4(self, event):
         print("I'm entering state4")
         reply_token = event.reply_token
-        send_text_message(reply_token, "凡夫俗子，注定六道輪迴！，施主是否從新開始?","你已經中了張麗美的詭計，落入六道輪迴、永不超生！","https://i.imgur.com/k0bFN4n.jpg")
+        send_text_message(reply_token, "凡夫俗子，注定六道輪迴！，施主是否從新開始？","你已經中了張麗美的詭計，落入六道輪迴、永不超生！","https://i.imgur.com/k0bFN4n.jpg")
         
     def on_enter_state5(self, event):
         print("I'm entering state5")
         reply_token = event.reply_token
-        send_text_message(reply_token, "身為刑警的你是否要加入慈善會秘密調查?","為了解開這件詭譎的謎團，賴警官眉頭一皺，似乎決心隻身前往慈善會總壇探探口風……","https://i.imgur.com/l6arcRX.jpg")
+        send_text_message(reply_token, "身為刑警的你是否要加入慈善會秘密調查？","為了解開這件詭譎的謎團，賴警官眉頭一皺，似乎決心隻身前往慈善會總壇探探口風……","https://i.imgur.com/l6arcRX.jpg")
 
     def on_enter_state6(self, event):
         print("I'm entering state6")
@@ -94,27 +94,27 @@ class TocMachine(GraphMachine):
     def on_enter_state7(self, event):
         print("I'm entering state7")
         reply_token = event.reply_token
-        send_text_message(reply_token, "慈善會今天不開門，是否改日再來呢?","當賴警官抵達慈善會總壇之後，應門的信徒竟然表示今天不招收新的會員……","https://i.imgur.com/rbkVgrM.jpg")
+        send_text_message(reply_token, "慈善會今天不開門，是否改日再來呢？","當賴警官抵達慈善會總壇之後，應門的信徒竟然表示今天不招收新的會員……","https://i.imgur.com/rbkVgrM.jpg")
         
     def on_enter_state8(self, event):
         print("I'm entering state8")
         reply_token = event.reply_token
-        send_text_message(reply_token, "順利進入慈善會總壇！")
+        send_text_message(reply_token, "順利進入慈善會總壇，是否給佛祖紅包一大包？","聽說今天佛祖要開壇作法，大批的信眾蜂擁而入、紛紛獻上紅包一大包……","https://i.imgur.com/xRxjukx.jpg")
         
     def on_enter_state9(self, event):
         print("I'm entering state9")
         reply_token = event.reply_token
-        send_text_message(reply_token, "面色乾黃，肝有問題！")
+        send_text_message(reply_token, "面色乾黃，肝有問題！佛祖趕緊用粗木棒逼出你體內的妖魔！","佛祖見你的臉色枯黃肌瘦，只好拿出比寶特瓶還粗的木棒給你一記當頭棒喝……","https://i.imgur.com/nm3Rc01.jpg")
         
     def on_enter_state10(self, event):
         print("I'm entering state10")
         reply_token = event.reply_token
-        send_text_message(reply_token, "女活佛看起來相當滿意！")
+        send_text_message(reply_token, "女活佛收下信徒們供奉的紅包後，嘴中喃喃自語……","女活佛收到紅包後看起來相當滿意，她決定等等開始開壇作法……","https://i.imgur.com/AfARYkz.jpg")
 
     def on_enter_state11(self, event):
         print("I'm entering state11")
         reply_token = event.reply_token
-        send_text_message(reply_token, "結局實在令人費解！")
+        send_text_message(reply_token, "結局實在令人費解！","","")
         
     def on_enter_state12(self, event):
         print("I'm entering state12")
@@ -124,5 +124,5 @@ class TocMachine(GraphMachine):
     def on_enter_state13(self, event):
         print("I'm entering state13")
         reply_token = event.reply_token
-        send_text_message(reply_token, "當場打死人")
+        send_text_message(reply_token, "當場打死人","684648","blob:https://imgur.com/1e64e3b0-09a3-4b18-9e52-af413ccd27ab")
         
