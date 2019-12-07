@@ -7,7 +7,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, Tem plate
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
 
-def send_text_message(reply_token, title, text, imgurl,option1,option2):
+def send_text_message(reply_token, title, text, imgurl, option1, option2):
     #line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
     line_bot_api = LineBotApi(channel_access_token)
     
