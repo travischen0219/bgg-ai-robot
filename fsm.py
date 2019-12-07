@@ -49,11 +49,12 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state11(self, event):
         text = event.message.text
-        return text.lower() == "對對對這就是我要的" or text.lower() == "真好 我也想加入戰局"
+        return text.lower() == "念大悲咒試圖改善情況" or text.lower() == "向警方承認吸食安非他命"
 
     def is_going_to_state12(self, event):
         text = event.message.text
-        return text.lower() == "念大悲咒試圖改善情況" or text.lower() == "向警方承認吸食安非他命"
+
+        return text.lower() == "對對對這就是我要的" or text.lower() == "真好 我也想加入戰局"
 
     def is_going_to_state13(self, event):
         text = event.message.text
@@ -124,5 +125,5 @@ class TocMachine(GraphMachine):
     def on_enter_state13(self, event):
         print("I'm entering state13")
         reply_token = event.reply_token
-        send_text_message(reply_token, "女活佛在做法的現場打死人，手中的木棍一鞭重過一鞭……","麗美眼神中帶著強烈的殺氣，完全不像是佛祖在世那般的慈悲為懷……","https://i.imgur.com/iuYYPwQ.jpg","對對對這就是我要的","真好 我也想加入戰局")
+        send_text_message(reply_token, "女活佛在做法的現場打死人，手中的木棍一鞭重過一鞭……","麗美眼神中帶著強烈的殺氣，完全不像是佛祖在世那般的慈悲為懷……","https://i.imgur.com/XjEFkg2.jpg","對對對這就是我要的","真好 我也想加入戰局")
         
