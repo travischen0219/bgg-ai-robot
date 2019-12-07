@@ -57,7 +57,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_state13(self, event):
         text = event.message.text
-        return text.lower() == "開壇作法"
+        return text.lower() == "開壇做法"
 
 ##########################################################
 
@@ -109,20 +109,20 @@ class TocMachine(GraphMachine):
     def on_enter_state10(self, event):
         print("I'm entering state10")
         reply_token = event.reply_token
-        send_text_message(reply_token, "女活佛收下信徒們供奉的紅包後，嘴中喃喃自語……","女活佛收到紅包後看起來相當滿意，她決定等等開始開壇作法……","https://i.imgur.com/AfARYkz.jpg")
+        send_text_message(reply_token, "女活佛收下信徒們供奉的紅包後，嘴中喃喃自語……","女活佛收到紅包後看起來相當滿意，她決定等等開始開壇做法……","https://i.imgur.com/AfARYkz.jpg")
 
     def on_enter_state11(self, event):
         print("I'm entering state11")
         reply_token = event.reply_token
-        send_text_message(reply_token, "結局實在令人費解！","","")
+        send_text_message(reply_token, "結局實在令人費解！","麗美在隔離偵訊當中突然對著空中大笑，任憑警方如何拷問始終得不到答案……","https://i.imgur.com/1nFbttH.jpg")
         
     def on_enter_state12(self, event):
         print("I'm entering state12")
         reply_token = event.reply_token
-        send_text_message(reply_token, "隔離偵訊")
+        send_text_message(reply_token, "將女活佛帶回警局隔離偵訊","賴警官見狀趕緊對空鳴槍、阻止女活佛繼續殺人，並且將她扭送法辦！","https://i.imgur.com/zmVOjK4.jpg")
         
     def on_enter_state13(self, event):
         print("I'm entering state13")
         reply_token = event.reply_token
-        send_text_message(reply_token, "當場打死人","684648","blob:https://imgur.com/1e64e3b0-09a3-4b18-9e52-af413ccd27ab")
+        send_text_message(reply_token, "女活佛在做法的現場打死人，手中的木棍一鞭重過一鞭……","麗美眼神中帶著強烈的殺氣，完全不像是佛祖在世那般的慈悲為懷……","https://i.imgur.com/iuYYPwQ.jpg")
         
