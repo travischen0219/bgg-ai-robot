@@ -21,8 +21,8 @@ def movie(reply_token):
         if index == 20:
             return content       
         title = data['title']
-        link =  data['href']
-        content += '{}\n{}\n'.format(title, link)
+        link =  "https://www.ttv.com.tw"+data['href']
+        content += '「{}」\n連結:{}\n'.format(title, link)
     print(content)
     #line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
     return content
