@@ -11,16 +11,17 @@ channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
 def movie(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
-    target_url = 'https://www.ttv.com.tw/videocity/videolist.asp?sid=364/'
+    target_url = 'https://www.ttv.com.tw/videocity/videolist.asp?sid=364'
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'html.parser')   
+    soup = BeautifulSoup(res.text, 'html.parser')  
     content = ""
-    for index, data in enumerate(soup.select('thumbnail a')):
+    print(soup)
+    for index, data in enumerate(soup.select('div.caption.ellipsis a')):
         if index == 20:
             return content       
-        title = data.text
+        title = data['title']
         link =  data['href']
         content += '{}\n{}\n'.format(title, link)
 
