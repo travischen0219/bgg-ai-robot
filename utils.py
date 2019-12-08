@@ -17,14 +17,13 @@ def movie(reply_token):
     res.encoding = 'utf-8'
     soup = BeautifulSoup(res.text, 'html.parser')  
     content = ""
-    print(soup)
     for index, data in enumerate(soup.select('div.caption.ellipsis a')):
         if index == 20:
             return content       
         title = data['title']
         link =  data['href']
         content += '{}\n{}\n'.format(title, link)
-
+    print(content)
     line_bot_api.reply_message(reply_token, content)
 
     return content
