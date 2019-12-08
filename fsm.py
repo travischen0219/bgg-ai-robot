@@ -69,13 +69,12 @@ class TocMachine(GraphMachine):
     def on_enter_state0(self, event):
         print("I'm entering state0")
         reply_token = event.reply_token
-        movie(reply_token)     
+        line_bot_api.reply_message(reply_token, TextSendMessage(text="請輸入「重新來過」以進入劇情模式！"))
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
         reply_token = event.reply_token
-        send_text_message(reply_token, "是否開始體驗玫瑰瞳鈴眼第51集「鞭屍女活佛」？","民國八十年八月十二日宜蘭發生了一起驚悚的神祕案件。而這一切又似乎與慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png',"開始體驗","我不敢開始")
-        #movie(reply_token)
+        send_text_message2(reply_token, "是否開始體驗玫瑰瞳鈴眼第51集「鞭屍女活佛」？","民國八十年八月十二日宜蘭發生了一起驚悚的神祕案件。而這一切又似乎與慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png',"開始體驗","我不敢開始")
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
