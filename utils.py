@@ -5,7 +5,7 @@ from urllib.request import urlretrieve
 
 from linebot import LineBotApi, WebhookParser
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, ButtonsTemplate, MessageTemplateAction, URITemplateAction, PostbackTemplateAction
-
+import line_bot_api
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
@@ -58,10 +58,7 @@ def movie():
         title = data.text
         link =  data['href']
         content += '{}\n{}\n'.format(title, link)
-
-    line_bot_api.reply_message(reply_token, content)
-    return"OK"
-    #return content
+    return content
 
 """
 def send_image_url(id, img_url):
