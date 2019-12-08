@@ -19,6 +19,12 @@ machine = TocMachine(
         {
             "trigger": "advance",
             "source": "state0",
+            "dest": "state0",
+            "conditions": "is_going_to_state0",
+        },
+        {
+            "trigger": "advance",
+            "source": "state0",
             "dest": "state1",
             "conditions": "is_going_to_state1",
         },

@@ -24,8 +24,7 @@ def movie(reply_token):
         link =  data['href']
         content += '{}\n{}\n'.format(title, link)
     print(content)
-    line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
-
+    #line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
     return content
 
 
@@ -57,7 +56,9 @@ def send_text_message(reply_token, title, text, imgurl, option1, option2):
         )
     )
 
-    line_bot_api.reply_message(reply_token, buttons_template)
+    a = movie;
+
+    line_bot_api.reply_message(reply_token,[TextSendMessage(text=a),buttons_template])
 
     return "OK"
 
