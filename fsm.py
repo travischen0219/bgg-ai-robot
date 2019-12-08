@@ -61,6 +61,10 @@ class TocMachine(GraphMachine):
         return text.lower() == "即刻開壇做法"
 
 ##########################################################
+    def on_enter_state0(self, event):
+        print("I'm entering state0")
+        reply_token = event.reply_token
+        movie(reply_token)
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
@@ -115,8 +119,8 @@ class TocMachine(GraphMachine):
     def on_enter_state11(self, event):
         print("I'm entering state11")
         reply_token = event.reply_token
-        #send_text_message(reply_token, "結局實在令人費解！","麗美在隔離偵訊當中突然對著空中大笑，任憑警方如何拷問始終得不到答案……","https://i.imgur.com/1nFbttH.jpg","重新來過","給麗美一巴掌下去")
-        movie(reply_token)
+        send_text_message(reply_token, "結局實在令人費解！","麗美在隔離偵訊當中突然對著空中大笑，任憑警方如何拷問始終得不到答案……","https://i.imgur.com/1nFbttH.jpg","重新來過","給麗美一巴掌下去")
+        
 
     def on_enter_state12(self, event):
         print("I'm entering state12")
