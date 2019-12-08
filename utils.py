@@ -37,13 +37,14 @@ def send_text_message(reply_token, title, text, imgurl, option1, option2):
         )
     )
 
-    line_bot_api.reply_message(reply_token, [buttons_template,movie()])
+    line_bot_api.reply_message(reply_token, buttons_template)
 
     return "OK"
 
 
 
-def movie():
+def movie(reply_token):
+    line_bot_api = LineBotApi(channel_access_token)
     target_url = 'https://www.ttv.com.tw/videocity/videolist.asp?sid=364/'
     rs = requests.session()
     res = rs.get(target_url, verify=False)
@@ -56,6 +57,9 @@ def movie():
         title = data.text
         link =  data['href']
         content += '{}\n{}\n'.format(title, link)
+    
+    line_bot_api.reply_message(reply_token, content)
+
     return content
 
 """
