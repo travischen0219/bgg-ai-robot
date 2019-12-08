@@ -22,7 +22,7 @@ def movie(reply_token):
             return content       
         title = data['title']
         link =  "https://www.ttv.com.tw"+data['href']
-        content += '「{}」\n連結:{}\n'.format(title, link)
+        content += '{}\n影片連結:{}\n'.format(title, link)
     print(content)
     #line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
     return content
@@ -92,7 +92,7 @@ def send_text_message2(reply_token, title, text, imgurl, option1, option2):
 
     a = movie(reply_token)
 
-    line_bot_api.reply_message(reply_token,[TextSendMessage(text=a),buttons_template])
+    line_bot_api.reply_message(reply_token,[buttons_template,TextSendMessage(text=a)])
 
     return "OK"
 
