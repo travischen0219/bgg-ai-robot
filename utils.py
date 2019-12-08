@@ -83,7 +83,7 @@ def send_text_message2(reply_token, title, text, imgurl, option1, option2):
                     text=option2
                 ),
                 URITemplateAction(
-                    label='立即觀看玫瑰瞳鈴眼51集',
+                    label='請立即觀看玫瑰瞳鈴眼51集',
                     uri='https://www.youtube.com/watch?v=alD7ixZQKso'
                 ),
             ]
