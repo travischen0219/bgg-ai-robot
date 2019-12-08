@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message
+from utils import send_text_message, movie
 
 
 class TocMachine(GraphMachine):
@@ -67,7 +67,7 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         #send_text_message(reply_token, "是否開始體驗玫瑰瞳鈴眼第51集「鞭屍女活佛」？","民國八十年八月十二日宜蘭發生了一起驚悚的神祕案件。而這一切又似乎與慈善會的「女活佛」有關……",'https://i.imgur.com/ppE2R8X.png',"開始體驗","我不敢開始")
         movie(reply_token)
-        
+
     def on_enter_state2(self, event):
         print("I'm entering state2")
         reply_token = event.reply_token
