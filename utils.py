@@ -1,4 +1,7 @@
 import os
+import requests 
+from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
 
 from linebot import LineBotApi, WebhookParser
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, ButtonsTemplate, MessageTemplateAction, URITemplateAction, PostbackTemplateAction
@@ -35,10 +38,30 @@ def send_text_message(reply_token, title, text, imgurl, option1, option2):
         )
     )
 
-    line_bot_api.reply_message(reply_token, buttons_template)
+    movie();
+    line_bot_api.reply_message(reply_token, [buttons_template,content])
 
     return "OK"
 
+
+
+def movie():
+    target_url = 'https://www.ttv.com.tw/videocity/videolist.asp?sid=364/'
+    rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    res.encoding = 'utf-8'
+    soup = BeautifulSoup(res.text, 'html.parser')   
+    content = ""
+    for index, data in enumerate(soup.select('thumbnail a')):
+        if index == 20:
+            return content       
+        title = data.text
+        link =  data['href']
+        content += '{}\n{}\n'.format(title, link)
+
+    line_bot_api.reply_message(reply_token, content)
+    return"OK"
+    #return content
 
 """
 def send_image_url(id, img_url):
