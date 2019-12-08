@@ -9,6 +9,22 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateS
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
 
+def movie():
+    target_url = 'https://www.ttv.com.tw/videocity/videolist.asp?sid=364/'
+    rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    res.encoding = 'utf-8'
+    soup = BeautifulSoup(res.text, 'html.parser')   
+    content = ""
+    for index, data in enumerate(soup.select('thumbnail a')):
+        if index == 20:
+            return content       
+        title = data.text
+        link =  data['href']
+        content += '{}\n{}\n'.format(title, link)
+    return content
+
+
 def send_text_message(reply_token, title, text, imgurl, option1, option2):
     #line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
     line_bot_api = LineBotApi(channel_access_token)
@@ -37,30 +53,14 @@ def send_text_message(reply_token, title, text, imgurl, option1, option2):
         )
     )
 
-    line_bot_api.reply_message(reply_token, buttons_template)
+    line_bot_api.reply_message(reply_token, [buttons_template,movie])
 
     return "OK"
 
 
 
-def movie(reply_token):
-    line_bot_api = LineBotApi(channel_access_token)
-    target_url = 'https://www.ttv.com.tw/videocity/videolist.asp?sid=364/'
-    rs = requests.session()
-    res = rs.get(target_url, verify=False)
-    res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'html.parser')   
-    content = ""
-    for index, data in enumerate(soup.select('thumbnail a')):
-        if index == 20:
-            return content       
-        title = data.text
-        link =  data['href']
-        content += '{}\n{}\n'.format(title, link)
-    
-    line_bot_api.reply_message(reply_token, content)
 
-    return content
+
 
 """
 def send_image_url(id, img_url):
