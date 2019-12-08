@@ -30,15 +30,14 @@ def send_text_message(reply_token, title, text, imgurl, option1, option2):
                     text=option2
                 ),
                 URITemplateAction(
-                    label='立即觀看「玫瑰瞳鈴眼第51集」',
+                    label='立即觀看玫瑰瞳鈴眼51集',
                     uri='https://www.youtube.com/watch?v=alD7ixZQKso'
                 ),
             ]
         )
     )
 
-    movie();
-    line_bot_api.reply_message(reply_token, [buttons_template,content])
+    line_bot_api.reply_message(reply_token, [buttons_template,movie()])
 
     return "OK"
 
