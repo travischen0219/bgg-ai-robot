@@ -92,7 +92,7 @@ def send_text_message2(reply_token, title, text, imgurl, option1, option2):
 
     a = movie(reply_token)
 
-    line_bot_api.reply_message(reply_token,[buttons_template,TextSendMessage(text=a)])
+    line_bot_api.reply_message(reply_token,[TextSendMessage(text=a),buttons_template])
 
     return "OK"
 
